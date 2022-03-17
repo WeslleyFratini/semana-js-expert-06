@@ -1,0 +1,19 @@
+version: "2.1"
+services:
+  live-reload:
+    image: semana-js-expert
+    build: .
+    environment:
+      PORT: 3000
+    command:
+      - npm
+      - run
+      - live-reload
+    volumes:
+      - .:/semana-js-expert
+      - node_modules:/semana-js-expert/node_modules
+    ports:
+      - 3000:3000
+
+volumes:
+  node_modules: {}
